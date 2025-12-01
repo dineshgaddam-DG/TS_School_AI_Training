@@ -20,15 +20,12 @@ app = FastAPI(
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Update this with specific origins in production
+    allow_origins=["*"], #update this with your requirements.
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Initialize Firebase Admin SDK
-# Make sure to set GOOGLE_APPLICATION_CREDENTIALS environment variable
-# or provide the path to your service account key
 try:
     # Check if Firebase app is already initialized
     from firebase_admin import _apps
